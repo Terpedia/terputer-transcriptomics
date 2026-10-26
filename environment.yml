@@ -1,0 +1,12 @@
+name: terputer-transcriptomics
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - nbclient
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
+  - pyarrow
