@@ -22,3 +22,8 @@ Create the conda environment with `conda env create -f environment.yml`, activat
 The reviewed analysis uses processed FPKM values; reported expression ratios are descriptive, not formal differential expression. Candidate cohorts in the selected-sample manifest are metadata-only. Perturb-seq comparisons are genetic perturbation evidence and remain separate from chemical exposure experiments.
 
 A SHA-256/size inventory for bundled files is provided in [`data/manifest.tsv`](data/manifest.tsv). The frozen result bundle supports review without network access; the notebook verifies checked-in source inputs and writes its derived outputs under `results/`.
+
+
+## Terpedia access
+
+The optional client in `src/terpedia_access.py` calls the Terpedia Knowledge API at `/v1/tabular/search`. It reads `TERPEDIA_KNOWLEDGE_API_KEY` and `TERPEDIA_KB_API_URL` from the process environment and sends the key in the `x-knowledge-key` header. Copy `.env.example` as a configuration reference, then provide the real key through a local secret manager, Codespaces secret, or authorized GitHub Actions secret. Never commit `.env` or print the key in notebook output.
